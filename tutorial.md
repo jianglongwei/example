@@ -10,8 +10,12 @@
 将域名以上加入各个主机的/etc/hosts
 ## 2.主机环境设置
 执行initialization.sh 完成主机基础环境工具的安装
-## 3.生成公钥和证书
-### 3.1crypto-config.yaml配置
+## 3. 安装Fabric 二进制文件
+将fabric 安装到/usr/local 目录下  
+
+    mkdir fabric && cd fabric && curl -sSL https://bit.ly/2ysbOFE | bash -s
+## 4.生成公钥和证书
+### 4.1crypto-config.yaml配置
 
     OrdererOrgs:
     - Name: Orderer
