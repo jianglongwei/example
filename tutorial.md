@@ -62,3 +62,8 @@ configtx.yaml 文件
 
     configtxgen  -profile TwoOrgsChannel -outputAnchorPeersUpdate ../channel-artifacts/Org1MSPanchors.tx -channelID mychannel -asOrg Org1MSP
     configtxgen  -profile TwoOrgsChannel -outputAnchorPeersUpdate ../channel-artifacts/Org2MSPanchors.tx -channelID mychannel -asOrg Org2MSP
+## 5.启动节点
+### 5.1 order节点配置启动
+docker-compose-order.yaml 文件
+
+    docker-compose -f docker-compose-order.yaml up -d
