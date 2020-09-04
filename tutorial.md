@@ -51,4 +51,14 @@ configtx.yaml 文件
 使用configtxgen工具生成区块
 
     configtxgen -profile SampleMultiNodeEtcdRaft -channelID sys-channel -outputBlock ./channel-artifacts/genesis.block
-    
+生成了系统通道的创世块，sys-channel是我们设置的系统创世块名,
+./channel-artifacts/genesis.block该创世区块在后面的 Orderer 启动和网络配置会使用到
+### 4.4 生成通道
+新建 ID 为mychannel的通道，指定通道成员以及访问策略
+
+    configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ../channel-artifacts/channel.tx -channelID mychannel
+### 4.5 锚节点更新文件
+锚节点负责代表组织与其他组织中的节点进行 Gossip 通信
+
+    configtxgen  -profile TwoOrgsChannel -outputAnchorPeersUpdate ../channel-artifacts/Org1MSPanchors.tx -channelID mychannel -asOrg Org1MSP
+    configtxgen  -profile TwoOrgsChannel -outputAnchorPeersUpdate ../channel-artifacts/Org2MSPanchors.tx -channelID mychannel -asOrg Org2MSP
