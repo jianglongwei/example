@@ -42,3 +42,13 @@
             Count: 2
         Users:
             Count: 1
+### 4.2 生成证书文件
+
+    cryptogen generate --config=./crypto-config.yaml
+### 4.3 configtx.yaml 配置
+
+configtx.yaml 文件
+使用configtxgen工具生成区块
+
+    configtxgen -profile SampleMultiNodeEtcdRaft -channelID sys-channel -outputBlock ./channel-artifacts/genesis.block
+    
