@@ -3,7 +3,7 @@ version: '2'
 volumes:
     peer1.org1.example.com:
 
- networks:
+networks:
    byfn:
 
 services:
