@@ -67,3 +67,9 @@ configtx.yaml 文件
 docker-compose-order.yaml 文件
 
     docker-compose -f docker-compose-order.yaml up -d
+### 5.2 peer 节点配置启动
+docker-compose-peerx-orgx.yaml 文件
+
+    docker-compose -f docker-compose-peerx-orgx.yaml up -d
+## 6.初始化Fabric 网络
+
